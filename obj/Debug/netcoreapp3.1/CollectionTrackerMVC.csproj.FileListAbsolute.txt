@@ -53,8 +53,6 @@ C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\Microso
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.csproj.CoreCompileInputs.cache
-C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.dll
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.pdb
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.genruntimeconfig.cache
@@ -73,3 +71,7 @@ C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.RazorTargetAssemblyInfo.cs
 C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.Views.pdb
+C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\pidgy\source\repos\CollectionTrackerMVC\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.csproj.CoreCompileInputs.cache
+C:\Users\pidgy\source\repos\CollectionTrackerMVC\obj\Debug\netcoreapp3.1\CollectionTrackerMVC.MvcApplicationPartsAssemblyInfo.cache
