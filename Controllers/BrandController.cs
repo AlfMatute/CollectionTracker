@@ -47,8 +47,8 @@ namespace CollectionTrackerMVC.Controllers
             }
             catch(Exception ex)
             {
-                _logger.LogError($"Failed to get the Brand: {ex.Message}");
-                return BadRequest($"Failed to get the Brand: {ex.Message}");
+                _logger.LogError($"Error when getting the Brand: {ex.Message}");
+                return BadRequest($"Error when getting the Brand: {ex.Message}");
             }
         }
 
@@ -69,8 +69,8 @@ namespace CollectionTrackerMVC.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failead to get active brands {ex.Message}");
-                return BadRequest($"Failead to get active brands {ex.Message}");
+                _logger.LogError($"Error when getting active brands {ex.Message}");
+                return BadRequest($"Error when getting active brands {ex.Message}");
             }
         }
 
@@ -81,29 +81,46 @@ namespace CollectionTrackerMVC.Controllers
         }
 
         // POST: BranchController/Create
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult UpdateBrand([FromBody]BrandViewModel model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if(ModelState.IsValid)
+                {
+                    var updatebrand = _mapper.Map<BrandViewModel, Brand>(model);
+                    _context.Update(updatebrand);
+                    if (_context.SaveChanges() == 0)
+                    {
+                        return Ok(_mapper.Map<Brand, BrandViewModel>(updatebrand));
+                    }
+                    else
+                    {
+                        return BadRequest("Failed to update the brand");
+                    }
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                _logger.LogError($"Error when updating the brand: {ex.Message}");
+                return BadRequest($"Error when updating the brand: {ex.Message}");
             }
         }
 
         // GET: BranchController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        //public ActionResult Edit(int id)
+        //{
+        //    return View();
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Post([FromBody]BrandViewModel model)
+        public ActionResult AddBrand([FromBody]BrandViewModel model)
         {
             try
             {
@@ -111,8 +128,14 @@ namespace CollectionTrackerMVC.Controllers
                 {
                     var NewBrand = _mapper.Map<BrandViewModel, Brand>(model);
                     _context.Add(NewBrand);
-                    _context.SaveChanges();
-                    return Created($"/api/Brand/{NewBrand.BrandId}", NewBrand);
+                    if (_context.SaveChanges() == 0)
+                    {
+                        return Created($"/api/Brand/{NewBrand.BrandId}", NewBrand);
+                    }
+                    else
+                    {
+                        return BadRequest("Failed to save the new brand");
+                    }
                 }
                 else
                 {
@@ -121,29 +144,46 @@ namespace CollectionTrackerMVC.Controllers
             }
             catch (Exception ex)
             {
-                this._logger.LogError($"Failed to save the new brand: {ex.Message}");
-                return BadRequest($"Failed to save the new brand: {ex.Message}");
+                this._logger.LogError($"Error when saving the new brand: {ex.Message}");
+                return BadRequest($"Error when saving the new brand: {ex.Message}");
             }
         }
 
         // GET: BranchController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
         // POST: BranchController/Delete/5
-        [HttpPost]
+        [HttpDelete("{id:int}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeleteBrand(int id)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var deletebrand = _context.Brands.Where(b => b.BrandId == id).FirstOrDefault();
+                if(deletebrand != null)
+                {
+                    _context.Remove(deletebrand);
+                    if(_context.SaveChanges() == 0)
+                    {
+                        return Ok(_mapper.Map<Brand, BrandViewModel>(deletebrand));
+                    }
+                    else
+                    {
+                        return BadRequest("Failed to delete the brand");
+                    }
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                _logger.LogError($"Error when deleting the brand: {ex.Message}");
+                return BadRequest($"Error deleting the brand: {ex.Message}");
             }
         }
     }
