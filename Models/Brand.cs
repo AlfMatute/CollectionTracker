@@ -7,7 +7,7 @@ namespace CollectionTrackerMVC.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BrandId;
+        public int BrandId { get; set; }
         [Required]
         [MaxLength(100)]
         public string BrandName { get; set; }

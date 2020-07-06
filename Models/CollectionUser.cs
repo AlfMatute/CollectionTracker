@@ -1,6 +1,8 @@
-﻿namespace CollectionTrackerMVC.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace CollectionTrackerMVC.Models
 {
-    public class CollectionUser
+    public class CollectionUser : IdentityUser
     {
         public string FirstName { get; set; }
 
