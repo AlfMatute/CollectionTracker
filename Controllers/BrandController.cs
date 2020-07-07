@@ -11,7 +11,7 @@ namespace CollectionTrackerMVC.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class BrandController : Controller
+    public class BrandController : ControllerBase
     {
         private readonly ILogger<BrandController> _logger;
         private readonly ApplicationDbContext _context;
@@ -21,11 +21,6 @@ namespace CollectionTrackerMVC.Controllers
             _logger = logger;
             _context = context;
             _mapper = mapper;
-        }
-        // GET: BranchController
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [HttpGet("{id:int}")]

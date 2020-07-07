@@ -12,7 +12,7 @@ namespace CollectionTrackerMVC.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class CategoryController : Controller
+    public class CategoryController : ControllerBase
     {
         private readonly ILogger<CategoryController> _logger;
         private readonly ApplicationDbContext _context;
@@ -22,10 +22,6 @@ namespace CollectionTrackerMVC.Controllers
             _logger = logger;
             _context = context;
             _mapper = mapper;
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [HttpGet("{id:int}")]
