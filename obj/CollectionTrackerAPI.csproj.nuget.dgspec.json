@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerMVC.csproj": {}
+    "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerMVC.csproj": {
+    "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerMVC.csproj",
+        "projectUniqueName": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerAPI.csproj",
         "projectName": "CollectionTrackerAPI",
-        "projectPath": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerMVC.csproj",
+        "projectPath": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerAPI.csproj",
         "packagesPath": "C:\\Users\\pidgy\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\obj\\",
         "projectStyle": "PackageReference",

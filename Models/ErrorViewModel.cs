@@ -1,6 +1,6 @@
 using System;
 
-namespace CollectionTrackerMVC.Models
+namespace CollectionTrackerAPI.Models
 {
     public class ErrorViewModel
     {

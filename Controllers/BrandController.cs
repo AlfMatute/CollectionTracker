@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using CollectionTrackerMVC.Models;
-using CollectionTrackerMVC.ViewModels;
+using CollectionTrackerAPI.Models;
+using CollectionTrackerAPI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace CollectionTrackerMVC.Controllers
+namespace CollectionTrackerAPI.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]

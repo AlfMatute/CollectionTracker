@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CollectionTrackerMVC.Models
+namespace CollectionTrackerAPI.Models
 {
     public class Category
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CollectionTrackerMVC.Migrations
+namespace CollectionTrackerAPI.Migrations
 {
     public partial class InitialDatabaseCreation : Migration
     {

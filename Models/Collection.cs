@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CollectionTrackerMVC.Models
+namespace CollectionTrackerAPI.Models
 {
     public class Collection
     {

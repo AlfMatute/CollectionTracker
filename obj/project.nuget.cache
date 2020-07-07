@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EyS/TqzWU+1v8+GpgkZxMmzEdMCYbglrxrLhj1o3WKxplX+9T8wg0zuWTAuiwaG4s682GB8mNaZABYHW14QvGg==",
+  "dgSpecHash": "kggycH7MHzMFeuixHm3wJPLyxAFerGYYmE3Oqv9K7BU3/nmp0P9OuQaKh22a0gPyySpcBrp84kC77fGKq9CE9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerMVC.csproj",
+  "projectFilePath": "C:\\Users\\pidgy\\source\\repos\\CollectionTrackerMVC\\CollectionTrackerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pidgy\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\pidgy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
