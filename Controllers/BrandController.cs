@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using CollectionTrackerMVC.Models;
 using CollectionTrackerMVC.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,13 +23,13 @@ namespace CollectionTrackerMVC.Controllers
             _mapper = mapper;
         }
         // GET: BranchController
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
 
         [HttpGet("{id:int}")]
-        public ActionResult<BrandViewModel> GetById(int id)
+        public ActionResult<BrandViewModel> Get(int id)
         {
             try 
             {
@@ -53,7 +51,7 @@ namespace CollectionTrackerMVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<BrandViewModel>> GetBrands()
+        public ActionResult<IEnumerable<BrandViewModel>> Get()
         {
             try
             {
@@ -75,15 +73,15 @@ namespace CollectionTrackerMVC.Controllers
         }
 
         // GET: BranchController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: BranchController/Create
         [HttpPut]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateBrand([FromBody]BrandViewModel model)
+        public ActionResult Update([FromBody]BrandViewModel model)
         {
             try
             {
@@ -120,7 +118,7 @@ namespace CollectionTrackerMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddBrand([FromBody]BrandViewModel model)
+        public ActionResult Create([FromBody]BrandViewModel model)
         {
             try
             {
@@ -130,7 +128,7 @@ namespace CollectionTrackerMVC.Controllers
                     _context.Add(NewBrand);
                     if (_context.SaveChanges() == 0)
                     {
-                        return Created($"/api/Brand/{NewBrand.BrandId}", NewBrand);
+                        return Created($"/api/Brand/{NewBrand.BrandId}", _mapper.Map<Brand, BrandViewModel>(NewBrand));
                     }
                     else
                     {
@@ -158,7 +156,7 @@ namespace CollectionTrackerMVC.Controllers
         // POST: BranchController/Delete/5
         [HttpDelete("{id:int}")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteBrand(int id)
+        public ActionResult Delete(int id)
         {
             try
             {
