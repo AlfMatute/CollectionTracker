@@ -31,7 +31,7 @@ namespace CollectionTrackerMVC.Controllers
             {
                 var category = _context.Categories.Where(c => c.CategoryId == id).FirstOrDefault();
 
-                if(category != null)
+                if (category != null)
                 {
                     return Ok(_mapper.Map<Category, CategoryViewModel>(category));
                 }
@@ -40,7 +40,7 @@ namespace CollectionTrackerMVC.Controllers
                     return NotFound();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Error when getting the Category: {ex.Message}");
                 return BadRequest($"Error when getting the Category: {ex.Message}");
@@ -53,7 +53,7 @@ namespace CollectionTrackerMVC.Controllers
             try
             {
                 var categories = _context.Categories.ToList();
-                if(categories != null)
+                if (categories != null)
                 {
                     return Ok(_mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories));
                 }
@@ -62,7 +62,7 @@ namespace CollectionTrackerMVC.Controllers
                     return NotFound();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Error when getting the Categories: {ex.Message}");
                 return BadRequest($"Error when getting the Categories: {ex.Message}");
@@ -70,15 +70,15 @@ namespace CollectionTrackerMVC.Controllers
         }
 
         [HttpPut]
-        public ActionResult<CategoryViewModel> Update([FromBody]CategoryViewModel model)
+        public ActionResult<CategoryViewModel> Update([FromBody] CategoryViewModel model)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     var updateCategory = _mapper.Map<CategoryViewModel, Category>(model);
                     _context.Update(updateCategory);
-                    if(_context.SaveChanges() == 0)
+                    if (_context.SaveChanges() == 0)
                     {
                         return Ok(_mapper.Map<Category, CategoryViewModel>(updateCategory));
                     }
@@ -100,11 +100,11 @@ namespace CollectionTrackerMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CategoryViewModel> Create([FromBody]CategoryViewModel model)
+        public ActionResult<CategoryViewModel> Create([FromBody] CategoryViewModel model)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     var newCategory = _mapper.Map<CategoryViewModel, Category>(model);
                     _context.Add(newCategory);
@@ -122,7 +122,7 @@ namespace CollectionTrackerMVC.Controllers
                     return BadRequest(ModelState);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Error when creating the Category: {ex.Message}");
                 return BadRequest($"Error when creating the Category: {ex.Message}");
@@ -135,10 +135,10 @@ namespace CollectionTrackerMVC.Controllers
             try
             {
                 var deleteCategory = _context.Categories.Where(c => c.CategoryId == id).FirstOrDefault();
-                if(deleteCategory != null)
+                if (deleteCategory != null)
                 {
                     _context.Remove(deleteCategory);
-                    if(_context.SaveChanges() == 0)
+                    if (_context.SaveChanges() == 0)
                     {
                         return Ok(_mapper.Map<Category, CategoryViewModel>(deleteCategory));
                     }
@@ -152,7 +152,7 @@ namespace CollectionTrackerMVC.Controllers
                     return NotFound();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Error when deleting the Category: {ex.Message}");
                 return BadRequest($"Error when deleting the Category: {ex.Message}");
